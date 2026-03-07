@@ -1,0 +1,50 @@
+{
+  "query": "SELECT name, COUNT(*) as count, GROUP_CONCAT(id) as ids FROM categories GROUP BY name HAVING count > 1;",
+  "command": "mysql --batch --raw --column-names --default-character-set=utf8mb4 --host gateway04.us-east-1.prod.aws.tidbcloud.com --port 4000 --user 4Q7Ff1dQzmRy3yJ.root --database PSoWNi4qKtkxQMNVjLyPzh --execute SELECT name, COUNT(*) as count, GROUP_CONCAT(id) as ids FROM categories GROUP BY name HAVING count > 1;",
+  "rows": [
+    {
+      "name": "Beverages",
+      "count": "4",
+      "ids": "1,9,17,25"
+    },
+    {
+      "name": "Bakery",
+      "count": "4",
+      "ids": "4,12,20,28"
+    },
+    {
+      "name": "Household",
+      "count": "4",
+      "ids": "8,16,24,32"
+    },
+    {
+      "name": "Snacks",
+      "count": "4",
+      "ids": "2,10,18,26"
+    },
+    {
+      "name": "Personal Care",
+      "count": "4",
+      "ids": "7,15,23,31"
+    },
+    {
+      "name": "Produce",
+      "count": "4",
+      "ids": "5,13,21,29"
+    },
+    {
+      "name": "Frozen Foods",
+      "count": "4",
+      "ids": "6,14,22,30"
+    },
+    {
+      "name": "Dairy",
+      "count": "4",
+      "ids": "3,11,19,27"
+    }
+  ],
+  "messages": [],
+  "stdout": "name\tcount\tids\nBeverages\t4\t1,9,17,25\nBakery\t4\t4,12,20,28\nHousehold\t4\t8,16,24,32\nSnacks\t4\t2,10,18,26\nPersonal Care\t4\t7,15,23,31\nProduce\t4\t5,13,21,29\nFrozen Foods\t4\t6,14,22,30\nDairy\t4\t3,11,19,27\n",
+  "stderr": "",
+  "execution_time_ms": 59
+}

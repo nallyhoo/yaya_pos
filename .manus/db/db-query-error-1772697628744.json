@@ -1,0 +1,8 @@
+{
+  "query": "UPDATE products p\nJOIN (\n  SELECT c1.id as old_id, MIN(c2.id) as new_id\n  FROM categories c1\n  JOIN categories c2 ON c1.name = c2.name\n  WHERE c1.id > c2.id\n  GROUP BY c1.id\n) mapping ON p.categoryId = mapping.old_id\nSET p.categoryId = mapping.new_id;\n\nDELETE FROM categories WHERE id NOT IN (\n  SELECT MIN(id) FROM (\n    SELECT MIN(id) as id FROM categories GROUP BY name\n  ) t\n);",
+  "command": "mysql --batch --raw --column-names --default-character-set=utf8mb4 --host gateway04.us-east-1.prod.aws.tidbcloud.com --port 4000 --user 4Q7Ff1dQzmRy3yJ.root --database PSoWNi4qKtkxQMNVjLyPzh --execute UPDATE products p\nJOIN (\n  SELECT c1.id as old_id, MIN(c2.id) as new_id\n  FROM categories c1\n  JOIN categories c2 ON c1.name = c2.name\n  WHERE c1.id > c2.id\n  GROUP BY c1.id\n) mapping ON p.categoryId = mapping.old_id\nSET p.categoryId = mapping.new_id;\n\nDELETE FROM categories WHERE id NOT IN (\n  SELECT MIN(id) FROM (\n    SELECT MIN(id) as id FROM categories GROUP BY name\n  ) t\n);",
+  "returncode": 1,
+  "logs": [
+    "ERROR 1451 (23000) at line 11: Cannot delete or update a parent row: a foreign key constraint fails (`psowni4qktkxqmnvjlypzh`.`products`, CONSTRAINT `products_categoryId_categories_id_fk` FOREIGN KEY (`categoryId`) REFERENCES `categories` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION)"
+  ]
+}

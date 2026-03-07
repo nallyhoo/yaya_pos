@@ -1,0 +1,42 @@
+{
+  "query": "SELECT name, COUNT(*) as count FROM categories GROUP BY name;",
+  "command": "mysql --batch --raw --column-names --default-character-set=utf8mb4 --host gateway04.us-east-1.prod.aws.tidbcloud.com --port 4000 --user 4Q7Ff1dQzmRy3yJ.root --database PSoWNi4qKtkxQMNVjLyPzh --execute SELECT name, COUNT(*) as count FROM categories GROUP BY name;",
+  "rows": [
+    {
+      "name": "Personal Care",
+      "count": "1"
+    },
+    {
+      "name": "Snacks",
+      "count": "1"
+    },
+    {
+      "name": "Frozen Foods",
+      "count": "1"
+    },
+    {
+      "name": "Dairy",
+      "count": "1"
+    },
+    {
+      "name": "Produce",
+      "count": "1"
+    },
+    {
+      "name": "Beverages",
+      "count": "1"
+    },
+    {
+      "name": "Bakery",
+      "count": "1"
+    },
+    {
+      "name": "Household",
+      "count": "1"
+    }
+  ],
+  "messages": [],
+  "stdout": "name\tcount\nPersonal Care\t1\nSnacks\t1\nFrozen Foods\t1\nDairy\t1\nProduce\t1\nBeverages\t1\nBakery\t1\nHousehold\t1\n",
+  "stderr": "",
+  "execution_time_ms": 57
+}

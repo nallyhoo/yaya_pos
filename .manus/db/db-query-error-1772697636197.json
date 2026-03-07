@@ -1,0 +1,8 @@
+{
+  "query": "DELETE FROM order_items;\nDELETE FROM orders;\nDELETE FROM products;\nDELETE FROM categories;",
+  "command": "mysql --batch --raw --column-names --default-character-set=utf8mb4 --host gateway04.us-east-1.prod.aws.tidbcloud.com --port 4000 --user 4Q7Ff1dQzmRy3yJ.root --database PSoWNi4qKtkxQMNVjLyPzh --execute DELETE FROM order_items;\nDELETE FROM orders;\nDELETE FROM products;\nDELETE FROM categories;",
+  "returncode": 1,
+  "logs": [
+    "ERROR 1451 (23000) at line 3: Cannot delete or update a parent row: a foreign key constraint fails (`psowni4qktkxqmnvjlypzh`.`inventory_adjustments`, CONSTRAINT `inventory_adjustments_productId_products_id_fk` FOREIGN KEY (`productId`) REFERENCES `products` (`id`) ON DELETE NO ACTION ON UPDA)"
+  ]
+}

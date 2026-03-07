@@ -1,0 +1,9 @@
+{
+  "query": "DELETE FROM order_items;\nDELETE FROM orders;\nDELETE FROM inventory_adjustments;\nDELETE FROM products;\nDELETE FROM categories;",
+  "command": "mysql --batch --raw --column-names --default-character-set=utf8mb4 --host gateway04.us-east-1.prod.aws.tidbcloud.com --port 4000 --user 4Q7Ff1dQzmRy3yJ.root --database PSoWNi4qKtkxQMNVjLyPzh --execute DELETE FROM order_items;\nDELETE FROM orders;\nDELETE FROM inventory_adjustments;\nDELETE FROM products;\nDELETE FROM categories;",
+  "rows": [],
+  "messages": [],
+  "stdout": "",
+  "stderr": "",
+  "execution_time_ms": 156
+}

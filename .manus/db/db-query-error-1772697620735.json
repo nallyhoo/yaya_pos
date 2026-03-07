@@ -1,0 +1,8 @@
+{
+  "query": "DELETE FROM categories WHERE id NOT IN (\n  SELECT MIN(id) FROM (\n    SELECT MIN(id) as id FROM categories GROUP BY name\n  ) t\n);",
+  "command": "mysql --batch --raw --column-names --default-character-set=utf8mb4 --host gateway04.us-east-1.prod.aws.tidbcloud.com --port 4000 --user 4Q7Ff1dQzmRy3yJ.root --database PSoWNi4qKtkxQMNVjLyPzh --execute DELETE FROM categories WHERE id NOT IN (\n  SELECT MIN(id) FROM (\n    SELECT MIN(id) as id FROM categories GROUP BY name\n  ) t\n);",
+  "returncode": 1,
+  "logs": [
+    "ERROR 1451 (23000) at line 1: Cannot delete or update a parent row: a foreign key constraint fails (`psowni4qktkxqmnvjlypzh`.`products`, CONSTRAINT `products_categoryId_categories_id_fk` FOREIGN KEY (`categoryId`) REFERENCES `categories` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION)"
+  ]
+}
