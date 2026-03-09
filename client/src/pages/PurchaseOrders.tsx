@@ -199,7 +199,7 @@ export default function PurchaseOrders() {
 
       {/* Create PO Dialog */}
       <Dialog open={dialogOpen} onOpenChange={(o) => { setDialogOpen(o); if(!o) resetForm(); }}>
-        <DialogContent className="max-w-4xl max-h-[90vh] flex flex-col p-0">
+        <DialogContent className="max-w-6xl max-h-[90vh] flex flex-col p-0">
           <DialogHeader className="p-6 pb-2">
             <DialogTitle>New Purchase Order</DialogTitle>
           </DialogHeader>

@@ -212,23 +212,23 @@ export default function Customers() {
           </DialogHeader>
           <div className="space-y-4">
             <div>
-              <Label>Name *</Label>
+              <Label className="pb-2">Name *</Label>
               <Input value={form.name} onChange={(e) => f("name", e.target.value)} placeholder="Full name" />
             </div>
             <div>
-              <Label>Email</Label>
+              <Label className="pb-2">Email</Label>
               <Input type="email" value={form.email} onChange={(e) => f("email", e.target.value)} placeholder="email@example.com" />
             </div>
             <div>
-              <Label>Phone</Label>
+              <Label className="pb-2">Phone</Label>
               <Input value={form.phone} onChange={(e) => f("phone", formatCambodianPhone(e.target.value))} placeholder="012 345 6789" />
             </div>
             <div>
-              <Label>Address</Label>
+              <Label className="pb-2">Address</Label>
               <Input value={form.address} onChange={(e) => f("address", e.target.value)} placeholder="Street address" />
             </div>
             <div>
-              <Label>Notes</Label>
+              <Label className="pb-2">Notes</Label>
               <Input value={form.notes} onChange={(e) => f("notes", e.target.value)} placeholder="Internal notes..." />
             </div>
           </div>

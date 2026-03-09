@@ -259,7 +259,7 @@ export default function Products() {
 
       {/* Create/Edit Dialog */}
       <Dialog open={dialogOpen} onOpenChange={setDialogOpen}>
-        <DialogContent className="max-w-3xl max-h-[90vh] overflow-y-auto">
+        <DialogContent className="max-w-6xl max-h-[90vh] overflow-y-auto">
           <DialogHeader>
             <DialogTitle>{editId ? "Edit Product" : "Add New Product"}</DialogTitle>
           </DialogHeader>
@@ -321,7 +321,7 @@ export default function Products() {
             {/* Form Fields Section */}
             <div className="col-span-2 grid grid-cols-2 gap-4">
               <div className="col-span-2">
-                <Label>Product Name *</Label>
+                <Label className="pb-2">Product Name *</Label>
                 <Input value={form.name} onChange={(e) => f("name", e.target.value)} placeholder="e.g., Organic Milk" />
               </div>
               <div>
@@ -333,7 +333,7 @@ export default function Products() {
                 <Input value={form.barcode} readOnly placeholder="e.g., 123456789" className="mt-1 bg-muted font-mono" />
               </div>
               <div>
-                <Label>Category</Label>
+                <Label className="pb-2">Category</Label>
                 <Select2
                   options={categories?.map((c) => ({ value: c.id.toString(), label: c.name })) ?? []}
                   value={form.categoryId}
@@ -342,7 +342,7 @@ export default function Products() {
                 />
               </div>
               <div>
-                <Label>Unit</Label>
+                <Label className="pb-2">Unit</Label>
                 <Select2
                   options={["pcs", "box", "kg", "liter", "meter"].map((u) => ({ value: u, label: u }))}
                   value={form.unit}
@@ -350,23 +350,23 @@ export default function Products() {
                 />
               </div>
               <div>
-                <Label>Price (USD) *</Label>
+                <Label className="pb-2">Price (USD) *</Label>
                 <Input type="number" step="0.01" value={form.price} onChange={(e) => f("price", e.target.value)} placeholder="0.00" />
               </div>
               <div>
-                <Label>Cost Price (USD)</Label>
+                <Label className="pb-2">Cost Price (USD)</Label>
                 <Input type="number" step="0.01" value={form.costPrice} onChange={(e) => f("costPrice", e.target.value)} placeholder="0.00" />
               </div>
               <div>
-                <Label>Tax Rate (%)</Label>
+                <Label className="pb-2">Tax Rate (%)</Label>
                 <Input type="number" step="0.01" value={form.taxRate} onChange={(e) => f("taxRate", e.target.value)} placeholder="0.00" />
               </div>
               <div>
-                <Label>Stock Quantity</Label>
+                <Label className="pb-2">Stock Quantity</Label>
                 <Input type="number" value={form.stockQuantity} onChange={(e) => f("stockQuantity", e.target.value)} placeholder="0" />
               </div>
               <div>
-                <Label>Reorder Point</Label>
+                <Label className="pb-2">Reorder Point</Label>
                 <Input type="number" value={form.reorderPoint} onChange={(e) => f("reorderPoint", e.target.value)} placeholder="10" />
               </div>
               <div className="flex items-center gap-2 pt-6">
@@ -380,7 +380,7 @@ export default function Products() {
                 <Label htmlFor="isActive" className="cursor-pointer">Active Product</Label>
               </div>
               <div className="col-span-2">
-                <Label>Description</Label>
+                <Label className="pb-2">Description</Label>
                 <Input value={form.description} onChange={(e) => f("description", e.target.value)} placeholder="Product description..." />
               </div>
             </div>

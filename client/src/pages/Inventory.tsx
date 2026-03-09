@@ -253,11 +253,11 @@ export default function Inventory() {
       <Dialog open={adjustOpen} onOpenChange={setAdjustOpen}>
         <DialogContent>
           <DialogHeader>
-            <DialogTitle>Adjust Stock</DialogTitle>
+            <DialogTitle className="pb-2">Adjust Stock</DialogTitle>
           </DialogHeader>
           <div className="space-y-4">
             <div>
-              <Label>Product *</Label>
+              <Label className="pb-2">Product *</Label>
               <Select2
                 options={allProducts?.map((p) => ({ value: p.id.toString(), label: p.name })) ?? []}
                 value={adjustForm.productId}
@@ -266,7 +266,7 @@ export default function Inventory() {
               />
             </div>
             <div>
-              <Label>Adjustment Type *</Label>
+              <Label className="pb-2">Adjustment Type *</Label>
               <Select2
                 options={[
                   { value: "restock", label: "Restock" },
@@ -279,11 +279,11 @@ export default function Inventory() {
               />
             </div>
             <div>
-              <Label>Quantity *</Label>
+              <Label className="pb-2">Quantity *</Label>
               <Input type="number" value={adjustForm.quantity} onChange={(e) => setAdjustForm((p) => ({ ...p, quantity: e.target.value }))} placeholder="0" />
             </div>
             <div>
-              <Label>Note</Label>
+              <Label className="pb-2">Note</Label>
               <Input value={adjustForm.note} onChange={(e) => setAdjustForm((p) => ({ ...p, note: e.target.value }))} placeholder="Optional note..." />
             </div>
           </div>
